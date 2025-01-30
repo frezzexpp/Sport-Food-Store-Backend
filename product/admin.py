@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import Category, Product, Testimonial
 
 
+
+# Category admin register:
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'created_at', 'updated_at')
@@ -11,6 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 
+# Product admin register:
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'category', 'stock', 'created_at')
@@ -19,6 +22,8 @@ class ProductAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
 
 
+
+# Testimonial admin register:
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ('customer_name', 'rating', 'product', 'created_at')
